@@ -204,3 +204,45 @@ let elementosRemovidos = friends.splice(2, 0, "Robert", "Victor")
 console.log(friends)
 console.log(elementosRemovidos)
 
+
+// tenemos un array de nombres
+const names = ["Victor", "Mariluz", "Miguel", "Kurt"]
+const names2 = ["Ana", "Jose", "Jaime", "Sofia"]
+
+// necesitas una funcion a la cual le pasemos un array de nombres y una letra
+// la funcion no devolverá un numero, la cantidad de nombres que empiezan por esa letra
+
+function namesThatStartWithQty(namesArr, letter) {
+
+  // clausula de guardias (condicional que verfican un error en la data y previenen la ejecución de la funcion)
+  if (namesArr.length === 0) {
+    return "no hay nombres en el array"
+    // deja de ejecutar la funcion si esto ocurre
+  }
+
+  // contador
+  let cuenta = 0;
+  
+  // bucle
+  for (let i = 0; i < namesArr.length; i++) {
+    let cadaNombre = namesArr[i]
+    // console.log(cadaNombre)
+    // condicional
+    if (cadaNombre[0] === letter) {
+      cuenta++
+    }
+  }
+  // console.log(cuenta)
+  return cuenta
+
+}
+
+console.log( namesThatStartWithQty( names, "V" ) ) // 1
+console.log( namesThatStartWithQty( names, "M" ) ) // 2
+console.log( namesThatStartWithQty( names, "L" ) ) // 0
+console.log( namesThatStartWithQty( names2, "J" ) ) // 2
+console.log( namesThatStartWithQty( [], "A" ) ) // "no hay nombres en el array"
+
+
+
+
